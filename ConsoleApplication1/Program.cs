@@ -12,8 +12,8 @@ namespace ConsoleApplication1
         
         static void Main(string[] args)
         {
-           // int dayOfWeek = 0;
-            int year = 2014;
+           
+            int year = 0;
             
             List<string> months = new List<string> {"January","February","March","April","May","June","July","August","September","October","November","December" };
             List<string> weeks = new List<string> {"Sun","Mon","Tue","Wed","Thu","Fri","Sat" };
@@ -25,9 +25,13 @@ namespace ConsoleApplication1
                 string inpt=Console.ReadLine();
                 if(int.TryParse(inpt,out year))
                 {
-                    if(year>0&year<9999)
-                        validInput=true;
+                    if (year >= 1000 & year < 9999)
+                        validInput = true;
+                    
+                        
                 }
+                if(!validInput)
+                    Console.WriteLine("Invalid year. Must be 4 digit number.");
                 
                 
             }
